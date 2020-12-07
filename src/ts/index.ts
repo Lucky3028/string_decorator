@@ -8,7 +8,7 @@ function createWindow() {
     height: 600,
     webPreferences: {
       contextIsolation: true,
-      preload: path.resolve('./dist/preload.js')
+      preload: path.resolve('./dist/js/preload.js')
     }
   })
 
