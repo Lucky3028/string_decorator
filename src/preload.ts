@@ -13,3 +13,15 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 })
+
+import { contextBridge, ipcRenderer } from 'electron'
+
+contextBridge.exposeInMainWorld('api', {
+  isSupportedNotice: () =>
+    ipcRenderer
+      .invoke('is-notification-supported')
+      .then((result: boolean) => result)
+      .catch((err) => console.log(err)),
+  noSupportedNotice: () => false,
+  notice: () => ipcRenderer.send('require-send-notice')
+})

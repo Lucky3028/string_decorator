@@ -1,6 +1,8 @@
 // Modules to control application life and create native browser window
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Notification } from 'electron'
+import { ipcMain } from 'electron/main'
 import * as path from 'path'
+import { setTimeout } from 'timers'
 
 function createWindow() {
   // Create the browser window.
@@ -9,7 +11,7 @@ function createWindow() {
     height: 600,
     webPreferences: {
       contextIsolation: true,
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.resolve('./dist/preload.js')
     }
   })
 
@@ -17,7 +19,7 @@ function createWindow() {
   void mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished
@@ -30,6 +32,28 @@ void app.whenReady().then(() => {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
+
+  ipcMain.on('require-send-notice', () => {
+    const notification = new Notification({
+      title: '基本的な通知',
+      body: '簡単なメッセージ',
+      silent: false
+    })
+
+    notification.show()
+
+    setTimeout(
+      () => {
+        notification.close()
+      },
+      5000,
+      notification
+    )
+  })
+
+  ipcMain.handle('is-notification-supported', () => {
+    return Notification.isSupported()
   })
 })
 
