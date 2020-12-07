@@ -1,6 +1,6 @@
 {
   "name": "string_decorator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
@@ -12,8 +12,7 @@
     "eslint": "eslint src/**/*.ts",
     "eslint:fix": "eslint src/**/*.ts --fix",
     "lint": "npm-run-all eslint check-types",
-    "lint:fix": "npm-run-all eslint:fix check-types format",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint:fix": "npm-run-all eslint:fix check-types format"
   },
   "keywords": [],
   "author": "Lucky3028",
