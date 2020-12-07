@@ -1,7 +1,6 @@
 import { app, BrowserWindow, Notification } from 'electron'
 import { ipcMain } from 'electron/main'
 import * as path from 'path'
-import { setTimeout } from 'timers'
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
