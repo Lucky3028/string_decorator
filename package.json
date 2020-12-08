@@ -4,8 +4,9 @@
   "description": "",
   "main": "./dist/js/index.js",
   "scripts": {
-    "start": "run-s build exec",
-    "build": "tsc",
+    "start": "run-s tsc sass exec",
+    "tsc": "tsc",
+    "sass": "sass --update ./src/scss:./dist/css --style expanded",
     "exec": "electron .",
     "lint": "run-s lint:format lint:tsc lint:eslint",
     "lint:tsc": "tsc --noEmit",
