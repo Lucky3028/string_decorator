@@ -9,8 +9,8 @@
     "exec": "electron .",
     "lint": "run-s lint:format lint:tsc lint:eslint",
     "lint:tsc": "tsc --noEmit",
-    "lint:eslint": "eslint --cache --fix src/ts/**/*.ts",
-    "lint:format": "prettier --write 'src/ts/**/*.{js,ts,json}'",
+    "lint:eslint": "eslint --cache --fix src/ts/*.ts",
+    "lint:format": "prettier --write ./src/ts/*.{js,ts,json}",
     "watch": "run-p watch:*",
     "watch:sass": "sass --watch src/scss:dist/css --style expanded",
     "watch:build": "tsc -w"
