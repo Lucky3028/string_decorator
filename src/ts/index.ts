@@ -1,5 +1,4 @@
-import { app, BrowserWindow, Notification } from 'electron'
-import { ipcMain } from 'electron/main'
+import { app, BrowserWindow } from 'electron'
 import * as path from 'path'
 
 function createWindow() {
@@ -23,28 +22,6 @@ void app.whenReady().then(() => {
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the dock icon is clicked and there are no other windows open.
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
-  })
-
-  ipcMain.on('require-send-notice', () => {
-    const notification = new Notification({
-      title: '基本的な通知',
-      body: '簡単なメッセージ',
-      silent: false
-    })
-
-    notification.show()
-
-    setTimeout(
-      () => {
-        notification.close()
-      },
-      5000,
-      notification
-    )
-  })
-
-  ipcMain.handle('is-notification-supported', () => {
-    return Notification.isSupported()
   })
 })
 
