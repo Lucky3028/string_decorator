@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <title>Hello World!</title>
-    <link rel="stylesheet" href="./dist/css/destyle.css">
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="./dist/css/destyle.css">
+  <link rel="stylesheet" href="./dist/css/layout.css">
+</head>
+<body>
+  <header class="ly_header">
+    <div class="ly_header_inner">
+      <h1>String Decorator v.<span class="js_versionInfo"></span></h1>
+    </div>
+    <!-- /.ly_header_inner -->
+  </header>
+  <main>
+    <div class="ly_cont">
+    </div>
+    <!-- /.ly_cont -->
+  </main>
 
-    <script src="./dist/js/renderer.js"></script>
-  </body>
+  <script src="./dist/js/renderer.js"></script>
+</body>
 </html>
