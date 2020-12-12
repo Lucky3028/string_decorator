@@ -38,6 +38,30 @@
 }
 
 .bl_sect > p {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   line-height: 1.8;
+}
+
+.bl_bulletList {
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  & > li {
+    position: relative;
+    padding-left: 1em;
+    margin-bottom: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: .5em;
+      left: 0;
+      display: block;
+      width: .4em;
+      height: .4em;
+      background-color: #e25c00;
+      border-radius: 50%;
+    }
+  }
 }
