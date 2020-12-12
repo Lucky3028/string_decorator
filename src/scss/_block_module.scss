@@ -43,9 +43,6 @@
 }
 
 .bl_bulletList {
-  & > *:last-child {
-    margin-bottom: 0;
-  }
 
   & > li {
     position: relative;
