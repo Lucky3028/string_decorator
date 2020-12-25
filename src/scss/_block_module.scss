@@ -11,12 +11,19 @@
 
   &_link {
     display: inline-block;
-    padding-left: 30px;
-    padding-right: 30px;
-    margin-left: 1.5px;
-    margin-right: 1.5px;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+
+    padding: {
+      left: 30px;
+      right: 30px;
+      bottom: 10px;
+    }
+
+    margin: {
+      left: 1.5px;
+      right: 1.5px;
+      bottom: 10px;
+    }
+
     border-bottom: 4px solid #efefef;
     color: #777777;
     text-decoration: none;
@@ -43,6 +50,13 @@
 }
 
 .bl_bulletList {
+
+  &::before {
+    color: rgb(0, 0, 0);
+    content: "\f039";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
 
   & > li {
     position: relative;
