@@ -1,19 +1,19 @@
-/* Using PRECSS */
+// Using PRECSS
 
-/* ResetCSS: destyle.css */
+// ResetCSS: destyle.css
 @use "./destyle";
 
-/* Layout */
+// Layout
 @use "./layout";
 
-/* Module: Block */
+// Module: Block
 @use "./_block_module";
 
-/* Module: Element */
+// Module: Element
 @use "./element_module";
 
-/* Program: JavaScript */
+// Program: JavaScript
 @use "./program";
 
-/* Helper */
+// Helper
 @use "./helper"
