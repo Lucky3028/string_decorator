@@ -21,13 +21,13 @@
   </header>
   <nav class="tabs is-boxed is-centered pt-3 mb-0" role="navigation">
     <ul>
-      <li class="js_tabNav_link is-active" data-id="tab_home">
+      <li class="js_tabNav_link" data-id="tab_home">
         <a>
           <span class="icon is-small"><i class="fas fa-home" aria-hidden="true"></i></span>
           <span>Home</span>
         </a>
       </li>
-      <li class="js_tabNav_link" data-id="tab_decorate">
+      <li class="js_tabNav_link is-active" data-id="tab_decorate">
         <a>
           <span class="icon is-small"><i class="fas fa-plus" aria-hidden="true"></i></span>
           <span>Decorate</span>
@@ -48,7 +48,7 @@
     </ul>
   </nav>
   <main role="main">
-    <section class="section pt-5 js_panel" data-id="tab_home">
+    <section class="section pt-5 js_panel is-hidden" data-id="tab_home">
       <div class="container content is-fluid">
         <h2 class="is-2">Welcome to String Decorator!</h2>
         <p>このプログラムは、Minecraft Java Editionで装飾文字を入力するための文字変換を提供するものです。</p>
@@ -62,9 +62,28 @@
       </div>
       <!-- /.container -->
     </section>
-    <section class="section pt-5 js_panel is-hidden" data-id="tab_decorate">
+    <section class="section pt-5 js_panel" data-id="tab_decorate">
       <div class="container content is-fluid">
         <h2 class="is-2">装飾を付与する</h2>
+        <div class="buttons">
+            <a class="button"><span class="icon is-small"><i class="fas fa-bold"></i></span></a>
+            <a class="button"><span class="icon is-small"><i class="fas fa-italic"></i></span></a>
+            <a class="button"><span class="icon is-small"><i class="fas fa-underline"></i></span></a>
+            <a class="button"><span class="icon is-small"><i class="fas fa-strikethrough"></i></span></a>
+            <a class="button"><span class="icon is-small"><i class="fas fa-paint-roller"></i></span><span>Reset</span></a>
+            <a class="button"><span class="icon is-small"><i class="fas fa-random"></i></span><span>Obfuscated</span></a>
+        </div>
+        <!-- /.buttons -->
+        <div class="buttons has-addons">
+          <a class="button js_toggle" data-id="ascii">ASCII</a>
+          <a class="button js_toggle is-info is-selected" data-id="non_ascii">NON-ASCII</a>
+        </div>
+        <!-- /.buttons -->
+        <div class="buttons">
+          <a class="button">装飾のみクリア</a>
+          <a class="button">クリア</a>
+        </div>
+        <!-- /.buttons -->
       </div>
       <!-- /.container -->
     </section>
@@ -99,5 +118,6 @@
     </section>
   </main>
   <script src="./dist/js/renderer.js"></script>
+  <script src="./dist/js/renderer_deco.js"></script>
 </body>
 </html>
